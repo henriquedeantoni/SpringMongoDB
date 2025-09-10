@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.project.springmongodb.dto.AuthorDTO;
 
-@Document
+@Document(collection="col_post")
 public class Post implements Serializable {
 
 	private static final long serialVersionUID = 1L;
