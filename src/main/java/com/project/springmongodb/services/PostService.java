@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.springmongodb.domain.Post;
-import com.project.springmongodb.domain.User;
 import com.project.springmongodb.repository.PostRepository;
 import com.project.springmongodb.services.exception.ObjectNotFoundException;
 
@@ -22,5 +21,8 @@ public class PostService {
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
 	}
 	
+	public List<Post> findByTitle(String title){
+		return repository.findByTitleContainingIgnoreCase(title);
+	}
 	
 }
